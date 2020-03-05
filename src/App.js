@@ -8,7 +8,17 @@ const api = {
 
 function App() {
   const [searchLocation, setSearchLocation] = useState('')
-// 
+
+  const dateBuilder = (d) => {
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let day = days[d.getDay()];
+    let date =  d.getDate();
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+    return `${day}, ${date} ${month} ${year}`
+  }
+  
   return (
     <div className="App">
       <div className="main">
@@ -23,7 +33,7 @@ function App() {
         </div>
         <div className="location-box">
           <div className="location">London, GB</div>
-          {/* <div className="location-date">{dateBuilder(new Date)}</div> */}
+          <div className="location-date">{dateBuilder(new Date)}</div>
         </div>
         <div className="weather-box">
           <div className="temp">10°C</div>
