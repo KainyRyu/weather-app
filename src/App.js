@@ -33,11 +33,15 @@ function App() {
   }
   const backGround = (value) => {
     console.log (value);
-    return value === 'Clear' ? 
-      'warm' : 
-      value === 'Rain' || 'Drizzle' ? 
+    return value === ('Clear' || 'Sunny') ?
+      '' : 
+      value === ('Rain' || 'Drizzle') ? 
         'rain' : 
-        ''
+          value === 'Mist' ?
+          'cold' :
+          value === 'Clouds'?
+            'cloudy' :
+            '';
   }
   return (
     <div className={`App ${weather.weather && backGround(weather.weather[0].main)}`}>

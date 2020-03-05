@@ -14,7 +14,7 @@
 }
 
 .cloudy {
-  background: url(./image/cloudy.jpg);
+  background: url(./image/cloud.jpeg);
   background-position: center;
   background-size: cover;
 }
@@ -22,6 +22,12 @@
 .rain {
   background: url(./image/rain.jpeg);
   background-position: center;
+  background-size: cover;
+}
+
+.mist {
+  background: url(./image/cold.jpg);
+  background-position: top;
   background-size: cover;
 }
 
