@@ -7,16 +7,22 @@
   height: 100vh;
 }
 
-.App .warm {
+.warm {
   background: url(./image/warm.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
-.App .cloudy {
+.cloudy {
   background: url(./image/cloudy.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
-.App .rain {
+.rain {
   background: url(./image/rain.jpeg);
+  background-position: center;
+  background-size: cover;
 }
 
 .main {
@@ -53,7 +59,7 @@
   text-shadow: 0 2px rgba(0, 0, 0, 0.3);
 }
 
-.location-date {
+.location-box .date {
   font-size: 20px;
   font-style: italic;
   text-shadow: 0 2px rgba(0, 0, 0, 0.3);

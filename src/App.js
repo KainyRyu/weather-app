@@ -7,7 +7,8 @@ const api = {
 }
 
 function App() {
-  const [searchLocation, setSearchLocation] = useState('')
+  const [query, setQuery] = useState('')
+  const [weather, setWeather] = useState('')
 
   const dateBuilder = (d) => {
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -19,26 +20,50 @@ function App() {
     return `${day}, ${date} ${month} ${year}`
   }
   
+  const search = async (e) => {
+    if(e.key === 'Enter') {
+      fetch(`${api.base}weather?q=${query}&appid=${api.key}`)
+      .then(res => res.json())
+      .then(result => {
+        setWeather(result);
+        setQuery('');
+        console.log(result);
+      });
+    }
+  }
+  const backGround = (value) => {
+    console.log (value);
+    return value === 'Clear' ? 
+      'warm' : 
+      value === 'Rain' || 'Drizzle' ? 
+        'rain' : 
+        ''
+  }
   return (
-    <div className="App">
+    <div className={`App ${weather.weather && backGround(weather.weather[0].main)}`}>
       <div className="main">
         <div className="search-box">
           <input 
             className="search-bar" 
             type="text"
             placeholder="Search the location..."
-            value={searchLocation}
-            onChange={(e) => setSearchLocation(e.target.value)}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyPress={search}
           />
         </div>
-        <div className="location-box">
-          <div className="location">London, GB</div>
-          <div className="location-date">{dateBuilder(new Date)}</div>
-        </div>
-        <div className="weather-box">
-          <div className="temp">10°C</div>
-          <div className="weather">Sunny</div>
-        </div>
+          {weather.weather && (
+            <>
+              <div className="location-box">
+                <div className="location">{weather.name}, </div>
+                <div className="date">{dateBuilder(new Date)}</div>
+              </div>
+              <div className="weather-box">
+                <div className="temp">{Math.round(weather.main.temp - 273.15)}°C</div>
+                <div className="weather">{weather.weather && weather.weather[0].main}</div>
+              </div>
+            </>
+          )}
       </div>
     </div>
   );
