@@ -1,32 +1,84 @@
 .App {
+  color: #fff;
   text-align: center;
+  background: url(./image/sunny.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .warm {
+  background: url(./image/warm.jpg);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App .cloudy {
+  background: url(./image/cloudy.jpg);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App .rain {
+  background: url(./image/rain.jpeg);
 }
 
-.App-link {
-  color: #61dafb;
+.main {
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.2);
 }
+
+.search-box {
+  height: 10vh;
+  /* padding-top: 10px; */
+}
+
+.search-bar {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 80vw;
+  font-size: 26px;
+  padding: 5px 15px;
+
+  appearance: none;
+  border: none;
+  outline: none;
+  border-radius: 0 0 20px 20px;
+
+  box-shadow: 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.location-box {
+  color: #fff;
+}
+
+.location {
+  font-size: 32px;
+  font-weight: 500;
+  text-shadow: 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.location-date {
+  font-size: 20px;
+  font-style: italic;
+  text-shadow: 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.temp{
+  display: inline-block;
+  padding: 15px 25px;
+  margin: 30px auto;
+  border: none;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.5);
+
+  text-shadow: 3px 4px rgba(0, 0, 0, 0.3);
+  font-size: 102px;
+  font-weight: 600;
+}
+
+.weather {
+  font-size: 48px;
+  font-weight: 600;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
 
 @keyframes App-logo-spin {
   from {
