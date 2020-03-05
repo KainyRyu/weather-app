@@ -37,7 +37,7 @@ function App() {
       '' : 
       value === ('Rain' || 'Drizzle') ? 
         'rain' : 
-          value === 'Mist' ?
+          value === 'Mist' || 'Haze' ?
           'cold' :
           value === 'Clouds'?
             'cloudy' :

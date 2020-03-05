@@ -21,8 +21,6 @@
 
 .rain {
   background: url(./image/rain.jpeg);
-  background-position: center;
-  background-size: cover;
 }
 
 .mist {
