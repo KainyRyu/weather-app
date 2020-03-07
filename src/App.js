@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useE} from 'react';
 import './App.css';
 
 const api = {
@@ -9,6 +9,12 @@ const api = {
 function App() {
   const [query, setQuery] = useState('')
   const [weather, setWeather] = useState('')
+
+  // uesEffect(() => {
+  //   fetch()
+  //   .then(res => res(json))
+  //   .then();
+  // }, []);
 
   const dateBuilder = (d) => {
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -31,6 +37,10 @@ function App() {
       });
     }
   }
+
+  // const dropDown() {
+
+  // }
   const backGround = (value) => {
     console.log (value);
     return value === ('Clear' || 'Sunny') ?
@@ -54,6 +64,7 @@ function App() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyPress={search}
+            // onKeyup={dropDown}
           />
         </div>
           {weather.weather && (

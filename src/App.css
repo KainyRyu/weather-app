@@ -7,13 +7,13 @@
   height: 100vh;
 }
 
-.warm {
-  background: url(./image/warm.jpg);
+/* .warm {
+  background: url(./image/.jpg);
   background-position: center;
   background-size: cover;
-}
+} */
 
-.cloudy {
+.cloudy {                            
   background: url(./image/cloud.jpeg);
   background-position: center;
   background-size: cover;
